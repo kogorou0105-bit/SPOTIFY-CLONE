@@ -1,0 +1,13 @@
+# 通用规则（适用于所有目录）
+.DS_Store
+*.log
+.idea/
+.vscode/
+node_modules
+.env
+
+# Client 目录特有规则
+client/dist/
+
+# Server 目录特有规则
+server/logs/
