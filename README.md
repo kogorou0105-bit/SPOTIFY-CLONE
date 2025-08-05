@@ -37,6 +37,7 @@ A work-in-progress Spotify clone built with modern web technologies, following t
 ### Utilities
 
 <div align="left">
+  <img src="https://img.shields.io/badge/Zustand-5.0.7-%23764ABC?logo=react&logoColor=white" alt="Zustand 5.0.7">
   <img src="https://img.shields.io/badge/Axios-1.5.0-%235A29E4?logo=axios" alt="Axios 1.10.0">
   <img src="https://img.shields.io/badge/Cloudinary-1.37.1-%2300A1FF?logo=cloudinary" alt="Cloudinary 2.7.0">
 </div>
