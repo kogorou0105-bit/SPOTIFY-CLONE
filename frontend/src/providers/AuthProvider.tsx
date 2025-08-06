@@ -2,6 +2,7 @@ import { useAuth } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../lib/axios";
 import { Loader } from "lucide-react";
+import { useAuthStore } from "@/store/useAuthStore";
 
 const updateApiToken = (token: string | null) => {
   if (token) {
@@ -13,13 +14,16 @@ const updateApiToken = (token: string | null) => {
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const { getToken } = useAuth();
+  const { checkAdminStatus } = useAuthStore();
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const initAuth = async () => {
       try {
         const token = await getToken();
         updateApiToken(token);
-        // console.log("API token set:", token);
+        if (token) {
+          await checkAdminStatus();
+        }
       } catch (error: unknown) {
         updateApiToken(null);
         console.log("Error in auth provider:", error);
@@ -28,8 +32,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       }
     };
     initAuth();
-  }, [getToken, setIsLoading]);
-
+  }, [getToken, setIsLoading, checkAdminStatus]);
   return isLoading ? (
     <div className="h-screen w-full flex justify-center items-center">
       <Loader className="size-8 text-emerald-500 animate-spin" />

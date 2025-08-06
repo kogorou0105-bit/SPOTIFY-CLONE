@@ -12,7 +12,7 @@ export const requireAdmin = async (req, res, next) => {
   try {
     const currentUser = await clerkClient.users.getUser(req.auth.userId);
     const isAdmin =
-      process.env.ADMIN_EMAIL === currentUser.primaryEmailAddress?.emailAddress;
+      process.env.ADMIN_EMALI === currentUser.primaryEmailAddress?.emailAddress;
     if (!isAdmin) {
       return res
         .status(403)

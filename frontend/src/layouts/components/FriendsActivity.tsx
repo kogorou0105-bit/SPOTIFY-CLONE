@@ -1,7 +1,7 @@
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { useChatStore } from "@/store/useChatStore";
 import { useUser } from "@clerk/clerk-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { HeadphonesIcon, Music, Users } from "lucide-react";
 import { useEffect } from "react";
 
@@ -30,12 +30,10 @@ const FriendsActivity = () => {
                 className="cursor-pointer hover:bg-zinc-800/50 p-3 rounded-md transition-colors group"
               >
                 <div className="flex items-start gap-3">
-                  <div className="relative w-10 h-10 flex-shrink-0">
-                    <Avatar className="size-10 border border-zinc-800">
+                  <div className="relative w-10 h-10 flex-shrink-0 rounded-md overflow-hidden">
+                    <Avatar>
                       <AvatarImage src={user.imageUrl} alt={user.fullName} />
-                      <AvatarFallback className="size-10">
-                        {user.fullName[0]}
-                      </AvatarFallback>
+                      <AvatarFallback>{user.fullName[0]}</AvatarFallback>
                     </Avatar>
                     <div
                       className={`absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-zinc-900 
