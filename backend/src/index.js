@@ -5,16 +5,21 @@ import fileUpload from "express-fileupload";
 import cors from "cors";
 import { clerkMiddleware } from "@clerk/express";
 import { connectDB } from "./lib/connectDB.js";
+import { createServer } from "http";
 import userRoutes from "./routes/user.route.js";
 import albumRoutes from "./routes/albums.route.js";
 import songRoutes from "./routes/songs.route.js";
 import authRoutes from "./routes/auth.route.js";
 import adminRoutes from "./routes/admin.route.js";
 import statsRoutes from "./routes/stats.route.js";
+import { initializeSocket } from "./lib/socket.js";
 const app = express();
 dotenv.config();
 const port = process.env.PORT;
 const __dirname = path.resolve();
+
+const httpServer = createServer(app);
+initializeSocket(httpServer);
 
 app.use(express.json());
 app.use(
