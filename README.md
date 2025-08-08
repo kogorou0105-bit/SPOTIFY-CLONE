@@ -9,11 +9,11 @@ A work-in-progress Spotify clone built with modern web technologies, following t
 
 ## ✨ Core Features
 
-| Feature         | Status         | Description                        |
-| --------------- | -------------- | ---------------------------------- |
-| Auth System     | ✅ Completed   | Secure login/register with JWT     |
-| Music Streaming | 🚧 In Progress | Basic audio player working         |
-| Live Chat Room  | ❌ Planned     | Socket.io based chat between users |
+| Feature         | Status       | Description                        |
+| --------------- | ------------ | ---------------------------------- |
+| Auth System     | ✅ Completed | Secure login/register with JWT     |
+| Music Streaming | ✅ Completed | Basic audio player working         |
+| Live Chat Room  | ✅ Completed | Socket.io based chat between users |
 
 ## 🛠 Tech Stack
 
