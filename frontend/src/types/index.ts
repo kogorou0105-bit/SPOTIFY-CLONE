@@ -9,7 +9,12 @@ export interface Song {
   createdAt: string;
   updatedAt: string;
 }
-
+export interface Stats {
+  totalSongs: number;
+  totalAlbums: number;
+  totalUsers: number;
+  totalArtists: number;
+}
 export interface Album {
   _id: string;
   title: string;
